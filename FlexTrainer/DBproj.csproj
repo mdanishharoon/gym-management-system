@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2B35747-C922-4CDC-8A3B-08D47516FF7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DBproj</RootNamespace>
+    <AssemblyName>DBproj</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-adapter, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.bouncy-castle-adapter.8.0.4\lib\net461\itext.bouncy-castle-adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.4\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.4\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\ADMIN_Approvals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\ADMIN_Approvals.designer.cs">
+      <DependentUpon>ADMIN_Approvals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\ADMIN_Performance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\ADMIN_Performance.designer.cs">
+      <DependentUpon>ADMIN_Performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\controlAdminReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\controlAdminReports.Designer.cs">
+      <DependentUpon>controlAdminReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\OWNER_AddTrainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\OWNER_AddTrainer.designer.cs">
+      <DependentUpon>OWNER_AddTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\OWNER_TrainerReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\OWNER_TrainerReports.designer.cs">
+      <DependentUpon>OWNER_TrainerReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\OWNER_View Accounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\OWNER_View Accounts.designer.cs">
+      <DependentUpon>OWNER_View Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\OWNER_ViewTrainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\OWNER_ViewTrainer.designer.cs">
+      <DependentUpon>OWNER_ViewTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlBooking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlBooking.Designer.cs">
+      <DependentUpon>ControlBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDietPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlDietPlan.Designer.cs">
+      <DependentUpon>ControlDietPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlWorkouts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlWorkouts.Designer.cs">
+      <DependentUpon>ControlWorkouts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner.Designer.cs">
+      <DependentUpon>Owner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterMember.Designer.cs">
+      <DependentUpon>RegisterMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterOwner.Designer.cs">
+      <DependentUpon>RegisterOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trainer.Designer.cs">
+      <DependentUpon>Trainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterTrainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterTrainer.Designer.cs">
+      <DependentUpon>RegisterTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerAppointmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerAppointmentControl.Designer.cs">
+      <DependentUpon>TrainerAppointmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerDashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerDashboardControl.Designer.cs">
+      <DependentUpon>TrainerDashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDashboard.Designer.cs">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\ADMIN_Performance.resx">
+      <DependentUpon>ADMIN_Performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\controlAdminReports.resx">
+      <DependentUpon>controlAdminReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\OWNER_AddTrainer.resx">
+      <DependentUpon>OWNER_AddTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\OWNER_TrainerReports.resx">
+      <DependentUpon>OWNER_TrainerReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\OWNER_View Accounts.resx">
+      <DependentUpon>OWNER_View Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlBooking.resx">
+      <DependentUpon>ControlBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlDietPlan.resx">
+      <DependentUpon>ControlDietPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlWorkouts.resx">
+      <DependentUpon>ControlWorkouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner.resx">
+      <DependentUpon>Owner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterMember.resx">
+      <DependentUpon>RegisterMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterOwner.resx">
+      <DependentUpon>RegisterOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterTrainer.resx">
+      <DependentUpon>RegisterTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trainer.resx">
+      <DependentUpon>Trainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerAppointmentControl.resx">
+      <DependentUpon>TrainerAppointmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerDashboardControl.resx">
+      <DependentUpon>TrainerDashboardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControlDashboard.resx">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
